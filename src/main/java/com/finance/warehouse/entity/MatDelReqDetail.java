@@ -43,10 +43,10 @@ public class MatDelReqDetail {
 
     @ManyToOne
     @JoinColumn(name = "mat_req_id", referencedColumnName = "id", nullable = false)
-    private MatDelReq matDelReqByMatReqId;
+    private MatDelReq matDelReq;
 
     @ManyToOne
-    @JoinColumn(name = "s_m_id", referencedColumnName = "s_m_id", nullable = false)
-    private SubMaterial subMaterialBySMId;
+    @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
+    private SubMaterial subMaterial;
 
 }

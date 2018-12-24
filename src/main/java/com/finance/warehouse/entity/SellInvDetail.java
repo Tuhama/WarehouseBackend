@@ -33,10 +33,10 @@ public class SellInvDetail {
 
     @ManyToOne
     @JoinColumn(name = "sell_inv_id", referencedColumnName = "id", nullable = false)
-    private SellInv sellInvBySellInvId;
+    private SellInv sellInv;
 
     @ManyToOne
-    @JoinColumn(name = "s_m_id", referencedColumnName = "s_m_id", nullable = false)
-    private SubMaterial subMaterialBySMId;
+    @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
+    private SubMaterial subMaterial;
 
 }

@@ -36,13 +36,13 @@ public class DepartmentController {
 
     // Get a Single department
     @GetMapping("/departments/{id}")
-    public Department getDepartmentById(@PathVariable(value = "id") Long departmentId) {
+    public Department getDepartmentById(@PathVariable(value = "id") Integer departmentId) {
         return departmentRepository.findById(departmentId)
                 .orElseThrow(() -> new ResourceNotFoundException("Department", "id", departmentId));
     }
     // Update a Department
     @PutMapping("/departments/{id}")
-    public Department updateDepartment(@PathVariable(value = "id") Long departmentId,
+    public Department updateDepartment(@PathVariable(value = "id") Integer departmentId,
                                  @Valid @RequestBody Department departmentDetails) {
 
         Department department = departmentRepository.findById(departmentId)
@@ -57,7 +57,7 @@ public class DepartmentController {
 
     // Delete a Department
     @DeleteMapping("/departments/{id}")
-    public ResponseEntity<?> deleteDepartment(@PathVariable(value = "id") Long departmentId) {
+    public ResponseEntity<?> deleteDepartment(@PathVariable(value = "id") Integer departmentId) {
         Department department = departmentRepository.findById(departmentId)
                 .orElseThrow(() -> new ResourceNotFoundException("Department", "id", departmentId));
 

@@ -22,10 +22,10 @@ public class ExternalContact {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "externalContactByExtContactId")
-    private List<ExternDelivery> externDeliveriesById = new ArrayList<ExternDelivery>();
+    @OneToMany(mappedBy = "externalContact")
+    private List<ExternDelivery> externDeliveries = new ArrayList<ExternDelivery>();
 
-    @OneToMany(mappedBy = "externalContactByExtContactId")
-    private List<SellInv> sellInvsById = new ArrayList<SellInv>();
+    @OneToMany(mappedBy = "externalContact")
+    private List<SellInv> sellInvs = new ArrayList<SellInv>();
 
 }

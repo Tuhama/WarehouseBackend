@@ -36,13 +36,13 @@ public class ContactController {
 
     // Get a Single Contact
     @GetMapping("/contacts/{id}")
-    public Contact getContactById(@PathVariable(value = "id") Long contactId) {
+    public Contact getContactById(@PathVariable(value = "id") Integer contactId) {
         return contactRepository.findById(contactId)
                 .orElseThrow(() -> new ResourceNotFoundException("Contact", "id", contactId));
     }
     // Update a Contact
     @PutMapping("/contacts/{id}")
-    public Contact updateContact(@PathVariable(value = "id") Long contactId,
+    public Contact updateContact(@PathVariable(value = "id") Integer contactId,
                                  @Valid @RequestBody Contact contactDetails) {
 
         Contact contact = contactRepository.findById(contactId)
@@ -57,7 +57,7 @@ public class ContactController {
 
     // Delete a Contact
     @DeleteMapping("/contacts/{id}")
-    public ResponseEntity<?> deleteContact(@PathVariable(value = "id") Long contactId) {
+    public ResponseEntity<?> deleteContact(@PathVariable(value = "id") Integer contactId) {
         Contact contact = contactRepository.findById(contactId)
                 .orElseThrow(() -> new ResourceNotFoundException("Contact", "id", contactId));
 

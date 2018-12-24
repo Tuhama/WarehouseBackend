@@ -29,18 +29,18 @@ public class Custody {
 
     @ManyToOne
     @JoinColumn(name = "emp_id", referencedColumnName = "id", nullable = false)
-    private Employee employeeByEmpId;
+    private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "s_m_id", referencedColumnName = "s_m_id", nullable = false)
-    private SubMaterial subMaterialBySMId;
+    @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
+    private SubMaterial subMaterial;
 
     @ManyToOne
     @JoinColumn(name = "intenal_delivery_id", referencedColumnName = "id")
-    private InternDelivery internDeliveryByIntenalDeliveryId;
+    private InternDelivery internDelivery;
 
     @ManyToOne
     @JoinColumn(name = "entry_id", referencedColumnName = "id")
-    private Entry entryByEntryId;
+    private Entry entry;
 
 }

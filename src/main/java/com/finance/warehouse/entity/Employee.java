@@ -39,15 +39,13 @@ public class Employee {
     private String lName;
 
 
-
-
     @ManyToOne
-    @JoinColumn(name = "dep_id", referencedColumnName = "id", nullable = false)
-    private Department departmentByDepId;
+    @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
+    private Department department;
 
     @ManyToOne
     @JoinColumn(name = "position_id", referencedColumnName = "id")
-    private Position positionByPositionId;
+    private Position position;
 
 /*    @OneToMany(mappedBy = "employeeByEmpId")
     private List<Custody> custodiesById  = new ArrayList<Custody>();

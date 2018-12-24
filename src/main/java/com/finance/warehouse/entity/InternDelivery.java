@@ -35,26 +35,26 @@ public class InternDelivery {
     @Column(name = "note")
     private String note;
 
-    @OneToMany(mappedBy = "internDeliveryByIntenalDeliveryId")
-    private Collection<Custody> custodiesById;
+    @OneToMany(mappedBy = "internDelivery")
+    private Collection<Custody> custodies;
 
     @ManyToOne
     @JoinColumn(name = "dep_id", referencedColumnName = "id", nullable = false)
-    private Department departmentByDepId;
+    private Department department;
 
     @ManyToOne
     @JoinColumn(name = "mat_req_id", referencedColumnName = "id", nullable = false)
-    private MatDelReq matDelReqByMatReqId;
+    private MatDelReq matDelReq;
 
     @ManyToOne
     @JoinColumn(name = "w_man_id", referencedColumnName = "id", nullable = false)
-    private Employee employeeByWManId;
+    private Employee wMan;
 
     @ManyToOne
     @JoinColumn(name = "receiver_id", referencedColumnName = "id", nullable = false)
-    private Employee employeeByReceiverId;
+    private Employee receiver;
 
-    @OneToMany(mappedBy = "internDeliveryByInternalDeliveryId")
-    private List<InternDeliveryDetail> internDeliveryDetailsById = new ArrayList<InternDeliveryDetail>();
+    @OneToMany(mappedBy = "internDelivery")
+    private List<InternDeliveryDetail> internDeliveryDetails = new ArrayList<InternDeliveryDetail>();
 
 }

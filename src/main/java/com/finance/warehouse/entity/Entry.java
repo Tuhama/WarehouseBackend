@@ -56,18 +56,18 @@ public class Entry {
     @Column(name = "note")
     private String note;
 
-    @OneToMany(mappedBy = "entryByEntryId")
-    private List<Custody> custodiesById = new ArrayList<Custody>();
+    @OneToMany(mappedBy = "entry")
+    private List<Custody> custodies = new ArrayList<Custody>();
 
     @ManyToOne
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
-    private Contact contactByContactId;
+    private Contact contact;
 
     @ManyToOne
     @JoinColumn(name = "emp_id", referencedColumnName = "id")
-    private Employee employeeByEmpId;
+    private Employee employee;
 
-    @OneToMany(mappedBy = "entryByEntryId")
-    private List<EntryDetail> entryDetailsById = new ArrayList<EntryDetail>();
+    @OneToMany(mappedBy = "entry")
+    private List<EntryDetail> entryDetails = new ArrayList<EntryDetail>();
 
 }

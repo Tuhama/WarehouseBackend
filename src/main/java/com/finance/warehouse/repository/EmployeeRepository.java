@@ -6,9 +6,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
-public interface EmployeeRepository  extends JpaRepository<Employee, Long> {
-    Page<Employee> findByPositionId(Long positionId, Pageable pageable);
-    Page<Employee> findByDepId(Long depId, Pageable pageable);
+public interface EmployeeRepository  extends JpaRepository<Employee, Integer> {
+
+
+    List<Employee> findByPositionId(Integer positionId);
+    List<Employee> findByDepartmentId(Integer depId);
 }

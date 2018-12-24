@@ -29,7 +29,7 @@ public class SupplyReq {
     @Column(name = "w_man")
     private int wMan;
 
-    @OneToMany(mappedBy = "supplyReqBySupReqId")
-    private List<SupplyReqDetail> supplyReqDetailsById= new ArrayList<SupplyReqDetail>();
+    @OneToMany(mappedBy = "supplyReq")
+    private List<SupplyReqDetail> supplyReqDetails= new ArrayList<SupplyReqDetail>();
 
 }

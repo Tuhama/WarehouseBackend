@@ -53,9 +53,9 @@ public class Receiving {
 
     @ManyToOne
     @JoinColumn(name = "pur_req_id", referencedColumnName = "id")
-    private MatPurReq matPurReqByPurReqId;
+    private MatPurReq matPurReq;
 
-    @OneToMany(mappedBy = "receivingByReceivingId")
-    private List<ReceivingDetail> receivingDetailsById = new ArrayList<ReceivingDetail>();
+    @OneToMany(mappedBy = "receiving")
+    private List<ReceivingDetail> receivingDetails = new ArrayList<ReceivingDetail>();
 
 }

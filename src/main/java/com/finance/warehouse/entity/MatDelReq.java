@@ -31,19 +31,19 @@ public class MatDelReq {
     @Column(name = "date")
     private Date date;
 
-    @OneToMany(mappedBy = "matDelReqByMatReqId")
-    private List<InternDelivery> internDeliveriesById = new ArrayList<InternDelivery>();
+    @OneToMany(mappedBy = "matDelReq")
+    private List<InternDelivery> internDeliveries = new ArrayList<InternDelivery>();
 
-    @ManyToOne
+/*    @ManyToOne
     @JoinColumn(name = "dep_id", referencedColumnName = "id")
-    private Department departmentByDepId;
+    private Department departmentByDepId;*/
 
     @ManyToOne
     @JoinColumn(name = "applicant_emp_id", referencedColumnName = "id")
-    private Employee employeeByApplicantEmpId;
+    private Employee applicant;
 
-    @OneToMany(mappedBy = "matDelReqByMatReqId")
-    private List<MatDelReqDetail> matDelReqDetailsById = new ArrayList<MatDelReqDetail>();
+    @OneToMany(mappedBy = "matDelReq")
+    private List<MatDelReqDetail> matDelReqDetails = new ArrayList<MatDelReqDetail>();
 
 
 }

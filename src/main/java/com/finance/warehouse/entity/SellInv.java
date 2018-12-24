@@ -48,14 +48,14 @@ public class SellInv {
     @Column(name = "w_man")
     private Integer wMan;
 
-    @OneToMany(mappedBy = "sellInvBySellBillId")
-    private List<ExternDelivery> externDeliveriesById = new ArrayList<ExternDelivery>();
+    @OneToMany(mappedBy = "sellInv")
+    private List<ExternDelivery> externDeliveries = new ArrayList<ExternDelivery>();
 
     @ManyToOne
     @JoinColumn(name = "ext_contact_id", referencedColumnName = "id", nullable = false)
-    private ExternalContact externalContactByExtContactId;
+    private ExternalContact externalContact;
 
-    @OneToMany(mappedBy = "sellInvBySellInvId")
-    private List<SellInvDetail> sellInvDetailsById = new ArrayList<SellInvDetail>();
+    @OneToMany(mappedBy = "sellInv")
+    private List<SellInvDetail> sellInvDetails = new ArrayList<SellInvDetail>();
 
 }

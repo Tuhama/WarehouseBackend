@@ -22,6 +22,7 @@ public class PositionController {
     // Get All Positions
     @GetMapping("/positions")
     public List<Position> getAllPositions() {
+        System.out.println(positionRepository.findAll());
         return positionRepository.findAll();
     }
 
@@ -36,13 +37,13 @@ public class PositionController {
 
     // Get a Single Position
     @GetMapping("/positions/{id}")
-    public Position getPositionById(@PathVariable(value = "id") Long positionId) {
+    public Position getPositionById(@PathVariable(value = "id") Integer positionId) {
         return positionRepository.findById(positionId)
                 .orElseThrow(() -> new ResourceNotFoundException("Position", "id", positionId));
     }
     // Update a Position
     @PutMapping("/positions/{id}")
-    public Position updatePosition(@PathVariable(value = "id") Long positionId,
+    public Position updatePosition(@PathVariable(value = "id") Integer positionId,
                                  @Valid @RequestBody Position positionDetails) {
 
         Position position = positionRepository.findById(positionId)
@@ -57,7 +58,7 @@ public class PositionController {
 
     // Delete a Position
     @DeleteMapping("/positions/{id}")
-    public ResponseEntity<?> deletePosition(@PathVariable(value = "id") Long positionId) {
+    public ResponseEntity<?> deletePosition(@PathVariable(value = "id") Integer positionId) {
         Position position = positionRepository.findById(positionId)
                 .orElseThrow(() -> new ResourceNotFoundException("Position", "id", positionId));
 

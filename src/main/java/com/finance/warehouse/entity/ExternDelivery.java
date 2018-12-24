@@ -46,14 +46,14 @@ public class ExternDelivery {
 
     @ManyToOne
     @JoinColumn(name = "sell_bill_id", referencedColumnName = "id", nullable = false)
-    private SellInv sellInvBySellBillId;
+    private SellInv sellInv;
 
     @ManyToOne
     @JoinColumn(name = "ext_contact_id", referencedColumnName = "id", nullable = false)
-    private ExternalContact externalContactByExtContactId;
+    private ExternalContact externalContact;
 
-    @OneToMany(mappedBy = "externDeliveryByExternalDeliveryId")
-    private List<ExternDeliveryDetail> externDeliveryDetailsById = new ArrayList<ExternDeliveryDetail>();
+    @OneToMany(mappedBy = "externDelivery")
+    private List<ExternDeliveryDetail> externDeliveryDetails = new ArrayList<ExternDeliveryDetail>();
 
 
 }

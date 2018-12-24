@@ -15,8 +15,8 @@ public class SubMaterial {
 
     @Id
     @GeneratedValue
-    @Column(name = "s_m_id")
-    private int sMId;
+    @Column(name = "id")
+    private int id;
 
 
     @Basic
@@ -28,8 +28,8 @@ public class SubMaterial {
     private Integer max;
 
     @Basic
-    @Column(name = "s_m_name")
-    private String sMName;
+    @Column(name = "name")
+    private String name;
 
     @Basic
     @Column(name = "quantity")
@@ -39,41 +39,40 @@ public class SubMaterial {
     @Column(name = "note")
     private String note;
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<Custody> custodiesBySMId = new ArrayList<Custody>();
+/*    @OneToMany(mappedBy = "subMaterialById")
+    private List<Custody> custodiesById = new ArrayList<Custody>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<EntryDetail> entryDetailsBySMId = new ArrayList<EntryDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<EntryDetail> entryDetailsById = new ArrayList<EntryDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<ExternDeliveryDetail> externDeliveryDetailsBySMId = new ArrayList<ExternDeliveryDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<ExternDeliveryDetail> externDeliveryDetailsById = new ArrayList<ExternDeliveryDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<InternDeliveryDetail> internDeliveryDetailsBySMId = new ArrayList<InternDeliveryDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<InternDeliveryDetail> internDeliveryDetailsById = new ArrayList<InternDeliveryDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<InventoryDetail> inventoryDetailsBySMId = new ArrayList<InventoryDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<InventoryDetail> inventoryDetailsById = new ArrayList<InventoryDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<MatDelReqDetail> matDelReqDetailsBySMId = new ArrayList<MatDelReqDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<MatDelReqDetail> matDelReqDetailsById = new ArrayList<MatDelReqDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<MatMonthlyTrans> matMonthlyTransBySMId = new ArrayList<MatMonthlyTrans>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<MatMonthlyTrans> matMonthlyTransById = new ArrayList<MatMonthlyTrans>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<MatPurReqDetail> matPurReqDetailsBySMId = new ArrayList<MatPurReqDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<MatPurReqDetail> matPurReqDetailsById = new ArrayList<MatPurReqDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<ReceivingDetail> receivingDetailsBySMId = new ArrayList<ReceivingDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<ReceivingDetail> receivingDetailsById = new ArrayList<ReceivingDetail>();
 
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<SellInvDetail> sellInvDetailsBySMId = new ArrayList<SellInvDetail>();
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<SellInvDetail> sellInvDetailsById = new ArrayList<SellInvDetail>();
+
+    @OneToMany(mappedBy = "subMaterialById")
+    private List<SupplyReqDetail> supplyReqDetailsById = new ArrayList<SupplyReqDetail>();*/
 
     @ManyToOne
-    @JoinColumn(name = "m_code", referencedColumnName = "m_code", nullable = false)
-    private Material materialByMCode;
-
-    @OneToMany(mappedBy = "subMaterialBySMId")
-    private List<SupplyReqDetail> supplyReqDetailsBySMId = new ArrayList<SupplyReqDetail>();
-
+    @JoinColumn(name = "material_id", referencedColumnName = "id", nullable = false)
+    private Material material;
 }

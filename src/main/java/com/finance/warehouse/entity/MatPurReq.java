@@ -33,12 +33,12 @@ public class MatPurReq {
 
     @ManyToOne
     @JoinColumn(name = "dep_id", referencedColumnName = "id")
-    private Department departmentByDepId;
+    private Department department;
 
-    @OneToMany(mappedBy = "matPurReqByMatPurId")
-    private List<MatPurReqDetail> matPurReqDetailsById = new ArrayList<MatPurReqDetail>();
+    @OneToMany(mappedBy = "matPurReq")
+    private List<MatPurReqDetail> matPurReqDetails = new ArrayList<MatPurReqDetail>();
 
-    @OneToMany(mappedBy = "matPurReqByPurReqId")
-    private List<Receiving> receivingsById = new ArrayList<Receiving>();
+    @OneToMany(mappedBy = "matPurReq")
+    private List<Receiving> receivings = new ArrayList<Receiving>();
 
 }

@@ -37,11 +37,11 @@ public class ReceivingDetail {
 
     @ManyToOne
     @JoinColumn(name = "receiving_id", referencedColumnName = "id", nullable = false)
-    private Receiving receivingByReceivingId;
+    private Receiving receiving;
 
     @ManyToOne
-    @JoinColumn(name = "s_m_id", referencedColumnName = "s_m_id", nullable = false)
-    private SubMaterial subMaterialBySMId;
+    @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
+    private SubMaterial subMaterial;
 
 
 }

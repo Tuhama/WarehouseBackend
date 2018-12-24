@@ -37,10 +37,10 @@ public class MatPurReqDetail {
 
     @ManyToOne
     @JoinColumn(name = "mat_pur_id", referencedColumnName = "id", nullable = false)
-    private MatPurReq matPurReqByMatPurId;
+    private MatPurReq matPurReq;
 
     @ManyToOne
-    @JoinColumn(name = "s_m_id", referencedColumnName = "s_m_id", nullable = false)
-    private SubMaterial subMaterialBySMId;
+    @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
+    private SubMaterial subMaterial;
 
 }

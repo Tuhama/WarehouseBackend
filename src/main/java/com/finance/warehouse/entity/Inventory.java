@@ -31,7 +31,7 @@ public class Inventory {
     @Column(name = "date")
     private Date date;
 
-    @OneToMany(mappedBy = "inventoryByInvId")
-    private List<InventoryDetail> inventoryDetailsById = new ArrayList<InventoryDetail>();
+    @OneToMany(mappedBy = "inventory")
+    private List<InventoryDetail> inventoryDetails = new ArrayList<InventoryDetail>();
 
 }

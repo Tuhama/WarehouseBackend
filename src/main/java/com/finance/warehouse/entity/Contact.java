@@ -21,7 +21,7 @@ public class Contact {
     private String name;
 
 
-    @OneToMany(mappedBy = "contactByContactId")
-    private List<Entry> entriesById = new ArrayList<Entry>();
+    @OneToMany(mappedBy = "contact")
+    private List<Entry> entries = new ArrayList<Entry>();
 
 }

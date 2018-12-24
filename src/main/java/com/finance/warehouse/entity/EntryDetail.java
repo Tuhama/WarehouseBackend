@@ -29,10 +29,10 @@ public class EntryDetail {
 
     @ManyToOne
     @JoinColumn(name = "entry_id", referencedColumnName = "id", nullable = false)
-    private Entry entryByEntryId;
+    private Entry entry;
 
     @ManyToOne
-    @JoinColumn(name = "s_m_id", referencedColumnName = "s_m_id", nullable = false)
-    private SubMaterial subMaterialBySMId;
+    @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
+    private SubMaterial subMaterial;
 
 }

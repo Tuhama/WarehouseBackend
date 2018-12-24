@@ -25,14 +25,14 @@ public class Department {
 /*    @OneToMany(mappedBy = "departmentByDepId")
     private Collection<Employee> employeesById;*/
 
-    @OneToMany(mappedBy = "departmentByDepId")
-    private List<InternDelivery> internDeliveriesById = new ArrayList<InternDelivery>();
+    @OneToMany(mappedBy = "department")
+    private List<InternDelivery> internDeliveries = new ArrayList<InternDelivery>();
 
-    @OneToMany(mappedBy = "departmentByDepId")
-    private List<MatDelReq> matDelReqsById = new ArrayList<MatDelReq>();
+/*    @OneToMany(mappedBy = "departmentByDepId")
+    private List<MatDelReq> matDelReqsById = new ArrayList<MatDelReq>();*/
 
-    @OneToMany(mappedBy = "departmentByDepId")
-    private List<MatPurReq> matPurReqsById = new ArrayList<MatPurReq>();
+    @OneToMany(mappedBy = "department")
+    private List<MatPurReq> matPurReqs = new ArrayList<MatPurReq>();
 
 
 }

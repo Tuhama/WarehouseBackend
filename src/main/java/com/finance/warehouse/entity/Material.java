@@ -13,27 +13,27 @@ import java.util.Objects;
 @Table(name = "material")
 public class Material {
     @Id
-    @GeneratedValue
-    @Column(name = "m_code")
-    private int mCode;
+    //@GeneratedValue
+    @Column(name = "id")
+    private int id;///رمز المادة
 
     @Basic
-    @Column(name = "m_name")
-    private String mName;
+    @Column(name = "name")
+    private String name;
 
     @Basic
-    @Column(name = "m_unit")
-    private int mUnit;
+    @Column(name = "unit")
+    private int unit;
 
     @Basic
-    @Column(name = "m_type")
-    private String mType;
+    @Column(name = "type")
+    private String type;
 
     @Basic
     @Column(name = "note")
     private String note;
 
-    @OneToMany(mappedBy = "materialByMCode")
-    private List<SubMaterial> subMaterialsByMCode = new ArrayList<SubMaterial>();
+    @OneToMany(mappedBy = "material")
+    private List<SubMaterial> subMaterials = new ArrayList<SubMaterial>();
 
 }
