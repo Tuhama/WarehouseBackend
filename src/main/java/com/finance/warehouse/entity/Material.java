@@ -33,7 +33,7 @@ public class Material {
     @Column(name = "note")
     private String note;
 
-    @OneToMany(mappedBy = "material")
-    private List<SubMaterial> subMaterials = new ArrayList<SubMaterial>();
+/*    @OneToMany(mappedBy = "material")
+    private List<SubMaterial> subMaterials = new ArrayList<SubMaterial>();*/
 
 }
