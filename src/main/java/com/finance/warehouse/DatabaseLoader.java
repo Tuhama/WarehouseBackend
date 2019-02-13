@@ -4,6 +4,15 @@ package com.finance.warehouse;
 import com.finance.warehouse.entity.Role;
 import com.finance.warehouse.entity.RoleName;
 import com.finance.warehouse.repository.RoleRepository;
+
+
+import com.finance.warehouse.entity.Department;
+import com.finance.warehouse.repository.DepartmentRepository;
+
+
+import com.finance.warehouse.entity.Department;
+import com.finance.warehouse.repository.DepartmentRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
