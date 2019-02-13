@@ -10,20 +10,20 @@ import java.util.Objects;
 @Table(name = "custody")
 public class Custody {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
 
-    @Basic
+
     @Column(name = "amount")
     private Integer amount;
 
-    @Basic
+
     @Column(name = "quantity")
     private Integer quantity;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

@@ -11,35 +11,35 @@ import java.util.Objects;
 public class InventoryDetail {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "price")
     private long price;
 
-    @Basic
+
     @Column(name = "actual_quantity")
     private int actualQuantity;
 
-    @Basic
+
     @Column(name = "diff_plus")
     private int diffPlus;
 
-    @Basic
+
     @Column(name = "diff_minus")
     private int diffMinus;
 
-    @Basic
+
     @Column(name = "w_man_note")
     private String wManNote;
 
-    @Basic
+
     @Column(name = "head_w_note")
     private String headWNote;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

@@ -11,27 +11,27 @@ import java.util.Objects;
 public class SupplyReqDetail {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "description")
     private String description;
 
-    @Basic
+
     @Column(name = "amount")
     private int amount;
 
-    @Basic
+
     @Column(name = "contracted_amount")
     private Integer contractedAmount;
 
-    @Basic
+
     @Column(name = "approx_price")
     private Long approxPrice;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

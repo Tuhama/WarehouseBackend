@@ -11,23 +11,23 @@ import java.util.Objects;
 public class SellInvDetail {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "description")
     private String description;
 
-    @Basic
+
     @Column(name = "amount")
     private int amount;
 
-    @Basic
+
     @Column(name = "price")
     private Long price;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

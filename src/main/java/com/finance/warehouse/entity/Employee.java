@@ -14,27 +14,27 @@ import java.util.Objects;
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "nat_id")
     private long natId;
 
-    @Basic
+
     @Column(name = "name")
     private String name;
 
-    @Basic
+
     @Column(name = "f_name")
     private String fName;
 
-    @Basic
+
     @Column(name = "m_name")
     private String mName;
 
-    @Basic
+
     @Column(name = "l_name")
     private String lName;
 

@@ -11,27 +11,27 @@ import java.util.Objects;
 public class ReceivingDetail {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "description")
     private String description;
 
-    @Basic
+
     @Column(name = "amount")
     private int amount;
 
-    @Basic
+
     @Column(name = "price")
     private Long price;
 
-    @Basic
+
     @Column(name = "total_price")
     private Long totalPrice;
 
-    @Basic
+
     @Column(name = "quantity")
     private int quantity;
 

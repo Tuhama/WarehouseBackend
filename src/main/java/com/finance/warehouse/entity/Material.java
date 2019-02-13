@@ -17,19 +17,19 @@ public class Material {
     @Column(name = "id")
     private int id;///رمز المادة
 
-    @Basic
+
     @Column(name = "name")
     private String name;
 
-    @Basic
+
     @Column(name = "unit")
     private int unit;
 
-    @Basic
+
     @Column(name = "type")
     private String type;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

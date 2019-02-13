@@ -14,28 +14,28 @@ import java.util.Objects;
 public class SubMaterial {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
 
-    @Basic
+
     @Column(name = "min")
     private Integer min;
 
-    @Basic
+
     @Column(name = "max")
     private Integer max;
 
-    @Basic
+
     @Column(name = "name")
     private String name;
 
-    @Basic
+
     @Column(name = "quantity")
     private Integer quantity;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

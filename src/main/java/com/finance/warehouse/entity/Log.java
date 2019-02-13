@@ -12,23 +12,23 @@ import java.util.Objects;
 public class Log {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "process_type")
     private Integer processType;
 
-    @Basic
+
     @Column(name = "record_id")
     private Integer recordId;
 
-    @Basic
+
     @Column(name = "user_id")
     private Integer userId;
 
-    @Basic
+
     @Column(name = "process_date")
     private Timestamp processDate;
 

@@ -12,24 +12,24 @@ import java.util.Objects;
 public class MatMonthlyTrans {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
 
-    @Basic
+
     @Column(name = "prev_quantity")
     private int prevQuantity;
 
-    @Basic
+
     @Column(name = "quantity")
     private Integer quantity;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 
-    @Basic
+
     @Column(name = "date")
     private Date date;
 

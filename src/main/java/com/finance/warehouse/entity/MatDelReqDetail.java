@@ -9,35 +9,35 @@ import java.util.Objects;
 public class MatDelReqDetail {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "description")
     private String description;
 
-    @Basic
+
     @Column(name = "amount")
     private int amount;
 
-    @Basic
+
     @Column(name = "purpose")
     private String purpose;
 
-    @Basic
+
     @Column(name = "prev_dell_amount")
     private Integer prevDellAmount;
 
-    @Basic
+
     @Column(name = "prev_dell_date")
     private Date prevDellDate;
 
-    @Basic
+
     @Column(name = "allowed_amount")
     private Integer allowedAmount;
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

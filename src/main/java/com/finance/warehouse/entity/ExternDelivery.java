@@ -15,32 +15,32 @@ import java.util.Objects;
 public class ExternDelivery {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "folder_num")
     private String folderNum;
 
-    @Basic
+
     @Column(name = "serial")
     private String serial;
 
-    @Basic
+
     @Column(name = "date")
     private Date date;
 
-    @Basic
+
     @Column(name = "w_man_id")
     private int wManId;
 
-    @Basic
+
     @Column(name = "receiver")
     private String receiver;
 
 
-    @Basic
+
     @Column(name = "note")
     private String note;
 

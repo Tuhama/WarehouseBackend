@@ -17,15 +17,15 @@ import java.util.Objects;
 public class SupplyReq {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "date")
     private Date date;
 
-    @Basic
+
     @Column(name = "w_man")
     private int wMan;
 

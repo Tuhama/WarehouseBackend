@@ -12,11 +12,11 @@ import java.util.Objects;
 @Table(name = "position")
 public class Position {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "name")
     private String name;
 

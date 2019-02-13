@@ -11,19 +11,19 @@ import java.util.Objects;
 public class EntryDetail {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+
     @Column(name = "description")
     private String description;
 
-    @Basic
+
     @Column(name = "amount")
     private int amount;
 
-    @Basic
+
     @Column(name = "quantity")
     private Integer quantity;
 

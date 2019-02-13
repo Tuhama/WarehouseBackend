@@ -3,6 +3,7 @@ package com.finance.warehouse.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Data
@@ -11,11 +12,12 @@ import java.util.Objects;
 public class Unit {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private int id;
 
-    @Basic
+
+    @NotBlank
     @Column(name = "name")
     private String name;
 
