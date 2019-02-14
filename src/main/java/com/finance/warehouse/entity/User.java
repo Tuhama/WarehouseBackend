@@ -54,7 +54,7 @@ public class User extends DateAudit {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-/*    public User() {
+    public User() {
 
     }
 
@@ -111,5 +111,5 @@ public class User extends DateAudit {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }*/
+    }
 }

@@ -22,6 +22,10 @@ public class Department {
     @Column(name = "name")
     private String name;
 
+    public Department(String name) {
+        this.name = name;
+    }
+
 /*    @OneToMany(mappedBy = "departmentByDepId")
     private Collection<Employee> employeesById;*/
 

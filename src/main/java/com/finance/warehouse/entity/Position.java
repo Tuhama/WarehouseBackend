@@ -20,6 +20,10 @@ public class Position {
     @Column(name = "name")
     private String name;
 
+    public Position(String name) {
+        this.name = name;
+    }
+
 /*    @OneToMany(mappedBy = "positionByPositionId")
     private List<Employee> employeesById = new ArrayList<Employee>();*/
 
