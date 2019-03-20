@@ -46,4 +46,9 @@ public class MatDelReq {
     private List<MatDelReqDetail> matDelReqDetails = new ArrayList<MatDelReqDetail>();
 
 
+    public void addDetail(MatDelReqDetail detail) {
+        matDelReqDetails.add(detail);
+        detail.setMatDelReq(this);
+    }
+
 }

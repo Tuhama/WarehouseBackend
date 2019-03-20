@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/auth")
 public class SubMaterialController {
 
     @Autowired
@@ -22,7 +22,6 @@ public class SubMaterialController {
     // Get All SubMaterials
     @GetMapping("/subMaterials")
     public List<SubMaterial> getAllSubMaterials() {
-        System.out.println(subMaterialRepository.findAll());
         return subMaterialRepository.findAll();
     }
 

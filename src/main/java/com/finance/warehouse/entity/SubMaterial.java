@@ -1,6 +1,7 @@
 package com.finance.warehouse.entity;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -27,11 +28,11 @@ public class SubMaterial {
     @Column(name = "max")
     private Integer max;
 
-
-    @Column(name = "name")
+    @NonNull
+    @Column(name = "name",unique=true)
     private String name;
 
-
+    @NonNull
     @Column(name = "quantity")
     private Integer quantity;
 
@@ -71,7 +72,7 @@ public class SubMaterial {
 
     @OneToMany(mappedBy = "subMaterialById")
     private List<SupplyReqDetail> supplyReqDetailsById = new ArrayList<SupplyReqDetail>();*/
-
+@NonNull
     @ManyToOne
     @JoinColumn(name = "material_id", referencedColumnName = "id", nullable = false)
     private Material material;

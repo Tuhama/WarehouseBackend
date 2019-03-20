@@ -24,7 +24,7 @@ public abstract class DateAudit implements Serializable {
     @LastModifiedDate
     private Instant updatedAt;
 
-/*    public Instant getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
@@ -38,6 +38,6 @@ public abstract class DateAudit implements Serializable {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
-    }*/
+    }
 
 }

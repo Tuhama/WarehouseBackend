@@ -1,10 +1,11 @@
 package com.finance.warehouse.entity;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import java.util.Objects;
+import javax.validation.constraints.NotEmpty;
+
 
 @Data
 @Entity
@@ -16,9 +17,9 @@ public class Unit {
     @Column(name = "Id")
     private int id;
 
-
-    @NotBlank
-    @Column(name = "name")
+    @NonNull
+    @NotEmpty
+    @Column(name = "name",unique=true)
     private String name;
 
 }

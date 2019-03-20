@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SubMaterialRepository extends JpaRepository<SubMaterial, Integer> {
+    SubMaterial findByName(String subMaterialName);
 }

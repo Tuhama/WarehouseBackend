@@ -1,12 +1,27 @@
 package com.finance.warehouse.entity;
 
+import com.finance.warehouse.payload.MatDelReqDetailRequest;
+
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Objects;
+
 
 @Entity
 @Table(name = "matDelReqDetail")
 public class MatDelReqDetail {
+
+
+public MatDelReqDetail(MatDelReqDetailRequest detailRequest){
+    this.description = detailRequest.getDescription();
+    this.amount = detailRequest.getAmount();
+    this.purpose = detailRequest.getPurpose();
+    this.prevDellAmount = detailRequest.getPrevDellAmount();
+    this.prevDellDate = detailRequest.getPrevDellDate();
+    this.allowedAmount = detailRequest.getAllowedAmount();
+    this.note = detailRequest.getNote();
+    this.subMaterial = detailRequest.getSubMaterial();
+}
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,4 +64,8 @@ public class MatDelReqDetail {
     @JoinColumn(name = "s_m_id", referencedColumnName = "id", nullable = false)
     private SubMaterial subMaterial;
 
+
+    public void setMatDelReq(MatDelReq matDelReq) {
+        this.matDelReq = matDelReq;
+    }
 }

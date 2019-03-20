@@ -1,6 +1,7 @@
 package com.finance.warehouse.entity;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,38 +12,40 @@ import java.util.Objects;
 @Data
 @Entity
 @Table(name = "employee")
-public class Employee {
+public
+class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-
+    @NonNull
     @Column(name = "nat_id")
     private long natId;
 
-
+    @NonNull
     @Column(name = "name")
     private String name;
 
-
+    @NonNull
     @Column(name = "f_name")
     private String fName;
 
-
+    @NonNull
     @Column(name = "m_name")
     private String mName;
 
-
+    @NonNull
     @Column(name = "l_name")
     private String lName;
 
-
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
     private Department department;
 
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "position_id", referencedColumnName = "id")
     private Position position;

@@ -4,20 +4,24 @@ package com.finance.warehouse.controller;
 import com.finance.warehouse.entity.Contact;
 import com.finance.warehouse.exception.ResourceNotFoundException;
 import com.finance.warehouse.repository.ContactRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/auth")
 public class ContactController {
 
     @Autowired
     ContactRepository contactRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(ContactController.class);
 
     // Get All Contacts
     @GetMapping("/contacts")
@@ -28,6 +32,7 @@ public class ContactController {
 
     // Create a new Contact
     @PostMapping("/contacts")
+    @PreAuthorize("hasRole('ADMIN')")
     public Contact createContact(@Valid @RequestBody Contact contact) {
         System.out.println(contact);
         return contactRepository.save(contact);
