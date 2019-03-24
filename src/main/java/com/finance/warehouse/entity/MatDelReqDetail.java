@@ -1,6 +1,11 @@
 package com.finance.warehouse.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.finance.warehouse.payload.MatDelReqDetailRequest;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -56,8 +61,12 @@ public MatDelReqDetail(MatDelReqDetailRequest detailRequest){
     @Column(name = "note")
     private String note;
 
-    @ManyToOne
+    @ManyToOne(optional=false)
     @JoinColumn(name = "mat_req_id", referencedColumnName = "id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
     private MatDelReq matDelReq;
 
     @ManyToOne

@@ -1,5 +1,7 @@
 package com.finance.warehouse.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -42,7 +44,10 @@ public class MatDelReq {
     @JoinColumn(name = "applicant_emp_id", referencedColumnName = "id")
     private Employee applicant;
 
-    @OneToMany(mappedBy = "matDelReq")
+    @OneToMany(mappedBy = "matDelReq", cascade = CascadeType.PERSIST)
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
     private List<MatDelReqDetail> matDelReqDetails = new ArrayList<MatDelReqDetail>();
 
 
