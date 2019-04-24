@@ -3,14 +3,15 @@ package com.finance.warehouse.controller;
 
 import com.finance.warehouse.entity.MatDelReq;
 import com.finance.warehouse.exception.ResourceNotFoundException;
-import com.finance.warehouse.payload.MatDelReqRequest;
+import com.finance.warehouse.payload.request.MatDelReqDTO;
 import com.finance.warehouse.payload.ApiResponse;
 import com.finance.warehouse.repository.MatDelReqRepository;
 import com.finance.warehouse.service.MatDelReqService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
+
 import javax.validation.Valid;
 import java.util.List;
 import java.net.URI;
@@ -34,10 +35,12 @@ public class MatDelReqController {
 
 
 
-    public ResponseEntity<?> createMatDelReq(@Valid @RequestBody MatDelReqRequest Req) {
+    // Create a new MatDelReq
+    @PostMapping("/matDelReqs")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> createMatDelReq(@Valid @RequestBody MatDelReqDTO req) {
 
-        MatDelReq matReq = matDelReqService.createMatDelReq(Req);
-
+        MatDelReq matReq = matDelReqService.createMatDelReq(req);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{matReqId}")
                 .buildAndExpand(matReq.getId()).toUri();
@@ -46,28 +49,22 @@ public class MatDelReqController {
                 .body(new ApiResponse(true, "Poll Created Successfully"));
     }
 
-    // Create a new MatDelReq
-    @PostMapping("/matDelReqs")
-    public MatDelReq createMatDelReq(@Valid @RequestBody MatDelReq req) {
 
-        System.out.println("here");
-        MatDelReq matReq = matDelReqRepository.save(req);
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{matReqId}")
-                .buildAndExpand(matReq.getId()).toUri();
 
-        return matReq;
-    }
 
     // Get a Single MatDelReq
     @GetMapping("/matDelReqs/{id}")
-    public MatDelReq getMatDelReqById(@PathVariable(value = "id") Integer matDelReqId) {
+    @PreAuthorize("hasRole('USER')")
+    public MatDelReq getMatDelReqById(@PathVariable(value = "id") Long matDelReqId) {
         return matDelReqRepository.findById(matDelReqId)
                 .orElseThrow(() -> new ResourceNotFoundException("MatDelReq", "id", matDelReqId));
     }
+
+
     // Update a MatDelReq
     @PutMapping("/matDelReqs/{id}")
-    public MatDelReq updateMatDelReq(@PathVariable(value = "id") Integer matDelReqId,
+    @PreAuthorize("hasRole('ADMIN')")
+    public MatDelReq updateMatDelReq(@PathVariable(value = "id") Long matDelReqId,
                                  @Valid @RequestBody MatDelReq matDelReqDetails) {
 
         MatDelReq matDelReq = matDelReqRepository.findById(matDelReqId)
@@ -82,7 +79,7 @@ public class MatDelReqController {
 
     // Delete a MatDelReq
     @DeleteMapping("/matDelReqs/{id}")
-    public ResponseEntity<?> deleteMatDelReq(@PathVariable(value = "id") Integer matDelReqId) {
+    public ResponseEntity<?> deleteMatDelReq(@PathVariable(value = "id") Long matDelReqId) {
         MatDelReq matDelReq = matDelReqRepository.findById(matDelReqId)
                 .orElseThrow(() -> new ResourceNotFoundException("MatDelReq", "id", matDelReqId));
 

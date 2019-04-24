@@ -1,4 +1,4 @@
-package com.finance.warehouse.payload;
+package com.finance.warehouse.payload.request;
 
 
 import com.finance.warehouse.entity.SubMaterial;
@@ -7,7 +7,7 @@ import java.sql.Date;
 
 
 @Data
-public class MatDelReqDetailRequest {
+public class MatDelReqDetailDTO {
 
     private String description;
 

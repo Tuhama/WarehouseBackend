@@ -1,13 +1,13 @@
-package com.finance.warehouse.payload;
+package com.finance.warehouse.payload.request;
 
 import com.finance.warehouse.entity.Employee;
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Data
-public class MatDelReqRequest {
+public class MatDelReqDTO {
 
 
     private String folderNum;
@@ -20,13 +20,13 @@ public class MatDelReqRequest {
 
     private Employee applicant;
 
-    private List<MatDelReqDetailRequest> matDelReqDetails;
+    private List<MatDelReqDetailDTO> matDelReqDetails;
 
-    public List<MatDelReqDetailRequest> getDetails() {
+/*    public List<MatDelReqDetailDTO> getDetails() {
         return matDelReqDetails;
     }
 
-    public void setDetails(List<MatDelReqDetailRequest> matDelReqDetails) {
+    public void setDetails(List<MatDelReqDetailDTO> matDelReqDetails) {
         this.matDelReqDetails = matDelReqDetails;
-    }
+    }*/
 }

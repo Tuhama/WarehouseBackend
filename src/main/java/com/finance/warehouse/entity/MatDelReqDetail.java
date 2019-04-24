@@ -1,22 +1,23 @@
 package com.finance.warehouse.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.finance.warehouse.payload.MatDelReqDetailRequest;
+import com.finance.warehouse.payload.request.MatDelReqDetailDTO;
+import lombok.Data;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Objects;
 
-
+@Data
 @Entity
 @Table(name = "matDelReqDetail")
 public class MatDelReqDetail {
 
 
-public MatDelReqDetail(MatDelReqDetailRequest detailRequest){
+public MatDelReqDetail(MatDelReqDetailDTO detailRequest){
     this.description = detailRequest.getDescription();
     this.amount = detailRequest.getAmount();
     this.purpose = detailRequest.getPurpose();
@@ -31,7 +32,7 @@ public MatDelReqDetail(MatDelReqDetailRequest detailRequest){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private long id;
 
 
     @Column(name = "description")
@@ -61,7 +62,7 @@ public MatDelReqDetail(MatDelReqDetailRequest detailRequest){
     @Column(name = "note")
     private String note;
 
-    @ManyToOne(optional=false)
+    @ManyToOne(fetch = FetchType.LAZY,optional=false)
     @JoinColumn(name = "mat_req_id", referencedColumnName = "id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(
@@ -76,5 +77,18 @@ public MatDelReqDetail(MatDelReqDetailRequest detailRequest){
 
     public void setMatDelReq(MatDelReq matDelReq) {
         this.matDelReq = matDelReq;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MatDelReqDetail choice = (MatDelReqDetail) o;
+        return Objects.equals(id, choice.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
